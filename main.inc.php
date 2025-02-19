@@ -17,3 +17,4 @@ if (is_bot()) {
     echo $message;
 exit;
 }
+?>
