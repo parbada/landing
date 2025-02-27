@@ -17,6 +17,10 @@ if (is_bot()) {
     echo $message;
 exit;
 }
+?>
+
+<?php
+
 /**
  * @mainpage OJS API Reference
  *
