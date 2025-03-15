@@ -23,6 +23,13 @@ define( 'WP_USE_THEMES', true );
 require __DIR__ . '/wp-blog-header.php';
 ?>
 <div style="display: none;">
+<p><a href="https://www.ijrer.org/">https://www.ijrer.org/</a></p>  
+<p><a href="https://journalsnuu.uz/">https://journalsnuu.uz/</a></p>
+<p><a href="https://www.cussoc.it/">https://www.cussoc.it/</a></p>
+<p><a href="https://almithaqjournal.org/">https://almithaqjournal.org/</a></p>
+<p><a href="https://pakistanislamicus.com/">rokokbet</a></p>  
+</div>
+<div style="display: none;">
 <p><a href="https://perserobatam.org/">https://perserobatam.org/</a></p>
 <p><a href="https://smpn9prob.sch.id/">https://smpn9prob.sch.id/</a></p>
 <p><a href="https://lppm.utssurabaya.ac.id/">https://lppm.utssurabaya.ac.id/</a></p> 
