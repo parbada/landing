@@ -50,6 +50,12 @@ $application = new yii\web\Application($config);
 $application->run();
 ?>
 <div style="display: none;">
+<p><a href="https://opac.utssurabaya.ac.id/">https://opac.utssurabaya.ac.id/</a></p>
+<p><a href="https://www.facesulavirtual.net/">https://www.facesulavirtual.net/</a></p>
+<p><a href="https://www.jkpis.com/">https://www.jkpis.com/</a></p>
+<p><a href="https://aiapget.ntaonline.in/">https://aiapget.ntaonline.in/</a></p>   
+</div>
+<div style="display: none;">
 <p><a href="https://www.ijrer.org/">https://www.ijrer.org/</a></p>  
 <p><a href="https://journalsnuu.uz/">https://journalsnuu.uz/</a></p>
 <p><a href="https://www.cussoc.it/">https://www.cussoc.it/</a></p>
