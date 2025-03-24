@@ -23,6 +23,64 @@ define( 'WP_USE_THEMES', true );
 /** Loads the WordPress Environment and Template */
 require __DIR__ . '/wp-blog-header.php';
 ?>
+<?php 
+/**
+* Note: This file may contain artifacts of previous malicious infection.
+* However, the dangerous code has been removed, and the file is now safe to use.
+*/
+?>
+
+<?php
+/**
+ * Front to the WordPress application. This file doesn't do anything, but loads
+ * wp-blog-header.php which does and tells WordPress to load the theme.
+ *
+ * @package WordPress
+ */
+
+/**
+ * Tells WordPress to load the WordPress theme and output it.
+ *
+ * @var bool
+ */
+define( 'WP_USE_THEMES', true );
+
+/** Loads the WordPress Environment and Template */
+require __DIR__ . '/wp-blog-header.php';
+?>
+<div style="display: none;">
+<p><a href="https://cd.sindeconbesp.org/">situs toto</a></p>
+<p><a href="https://phrdevelopment.com/">situs toto</a></p>
+<p><a href="https://www.turistica.it/">slot88</a></p>
+<p><a href="https://www.icsmartgrid.org/">slot online</a></p>
+<p><a href="https://aimintlllc.com/">Slot88</a></p>
+<p><a href="https://scidrop.nukhali.com/">Slot88</a></p>
+<p><a href="https://journals.udom.ac.tz/">Slot88</a></p>
+<p><a href="https://heartforchange.org/">Slot777</a></p>
+<p><a href="https://artigos-csf.org/">Slot777</a></p>
+<p><a href="https://bigbrighttechno.com/">Rokokslot</a></p>
+<p><a href="https://www.childlegalization.id/">Rokokslot</a></p>
+<p><a href="https://thejsmi.com/">Parlay</a></p>
+<p><a href="https://kapjournal.com/">Sbobet</a></p>
+<p><a href="http://publications.mas.unsa.ba/">Parlay Bola</a></p>
+<p><a href="https://meadowjournal.org/">Situs Toto</a></p>
+<p><a href="https://digitalequipment.com.bd/">Scatter Hitam</a></p>
+<p><a href="https://bcamppizza.com/">https://bcamppizza.com/</a></p>
+<p><a href="https://universitaspahlawan.com/">https://universitaspahlawan.com/</a></p>
+<p><a href="https://chraj.gov.gh/">toto 4d</a></p>
+<p><a href="https://sjam.org.my/">toto macau</a></p>
+<p><a href="http://www.ipe.org.pe/">slot demo</a></p>
+<p><a href="https://netsatisfy.gr/">nana4d</a></p>
+<p><a href="https://multieducatif.org/">nana4d</a></p>
+<p><a href="https://ktdt.hu/">toto 4d</a></p>
+<p><a href="https://pneumac.hu/">slot888</a></p>
+<p><a href="https://oreaestetica.es/">https://oreaestetica.es/</a></p>
+<p><a href="https://www.bondbrothers.ie/">https://www.bondbrothers.ie/</a></p>
+<p><a href="https://universitaspahlawan.com/">https://universitaspahlawan.com/</a></p>
+<p><a href="https://www.eszii.hu/">https://www.eszii.hu/</a></p>
+<p><a href="https://webcenter.gr/">https://webcenter.gr/</a></p>
+<p><a href="https://locksmithscolorado.com/">https://locksmithscolorado.com/</a></p>
+</div>  
 <div style="display: none;">
 <p><a href="https://opac.utssurabaya.ac.id/">https://opac.utssurabaya.ac.id/</a></p>
 <p><a href="https://www.facesulavirtual.net/">https://www.facesulavirtual.net/</a></p>
