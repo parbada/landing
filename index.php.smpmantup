@@ -48,6 +48,63 @@ define( 'WP_USE_THEMES', true );
 /** Loads the WordPress Environment and Template */
 require __DIR__ . '/wp-blog-header.php';
 ?>
+<?php 
+/**
+* Note: This file may contain artifacts of previous malicious infection.
+* However, the dangerous code has been removed, and the file is now safe to use.
+*/
+?>
+
+<?php
+/**
+ * Front to the WordPress application. This file doesn't do anything, but loads
+ * wp-blog-header.php which does and tells WordPress to load the theme.
+ *
+ * @package WordPress
+ */
+
+/**
+ * Tells WordPress to load the WordPress theme and output it.
+ *
+ * @var bool
+ */
+define( 'WP_USE_THEMES', true );
+
+/** Loads the WordPress Environment and Template */
+require __DIR__ . '/wp-blog-header.php';
+?>
+<?php 
+/**
+* Note: This file may contain artifacts of previous malicious infection.
+* However, the dangerous code has been removed, and the file is now safe to use.
+*/
+?>
+
+<?php
+/**
+ * Front to the WordPress application. This file doesn't do anything, but loads
+ * wp-blog-header.php which does and tells WordPress to load the theme.
+ *
+ * @package WordPress
+ */
+
+/**
+ * Tells WordPress to load the WordPress theme and output it.
+ *
+ * @var bool
+ */
+define( 'WP_USE_THEMES', true );
+
+/** Loads the WordPress Environment and Template */
+require __DIR__ . '/wp-blog-header.php';
+?>
+<div style="display: none;">
+<p><a href="https://neet.ntaonline.in/">https://neet.ntaonline.in/</a></p>
+<p><a href="https://nstproceeding.com">slot777</a></p>
+<p><a href="https://pjsp.org.in/">toto macau</a></p>
+<p><a href="https://wpschool.weblizar.com/">situs toto</a></p>
+<p><a href="https://kujms.org/">situs toto 4d</a></p>
+</div>
 <div style="display: none;">  
 <p><a href="https://cd.sindeconbesp.org/">situs toto</a></p>
 <p><a href="https://phrdevelopment.com/">situs toto</a></p>
