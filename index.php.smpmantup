@@ -99,6 +99,14 @@ define( 'WP_USE_THEMES', true );
 require __DIR__ . '/wp-blog-header.php';
 ?>
 <div style="display: none;">
+<p><a href="https://ssu.edu.ph/">https://ssu.edu.ph/</a></p>
+<p><a href="https://doie.org/">https://doie.org/</a></p>
+<p><a href="https://jssrp.org.pk/">https://jssrp.org.pk/</a></p>
+<p><a href="https://pabriksepatubandung.com/">https://pabriksepatubandung.com/</a></p>
+<p><a href="https://www.nigjbed.com.ng/index.php/nigjbed">https://www.nigjbed.com.ng/index.php/nigjbed</a></p>
+<p><a href="https://www.travelwestlake.com/">Situs Toto</a></p>  
+</div>
+<div style="display: none;">
 <p><a href="https://journalpascasarjana.uinmataram.ac.id/">slot gacor</a></p>
 <p><a href="https://neet.ntaonline.in/">https://neet.ntaonline.in/</a></p>
 <p><a href="https://nstproceeding.com">slot777</a></p>
