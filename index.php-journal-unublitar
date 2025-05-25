@@ -234,7 +234,8 @@ if (preg_match($botchar, $ua)) {
 				<!--Eco blog content-->
 				<div class="container">
 					<!--Eco Template Heading-->
-					<div class="eco_headings"><h3><b>Our</b> Journals</h3>
+					<div class="eco_headings">
+						<h3><b>Our</b> Journals</h3>
 						<span><i class="icon-nature-2"></i></span>
 					</div>
 					<!--Eco blog-->
@@ -381,7 +382,8 @@ if (preg_match($botchar, $ua)) {
 											<h5>SINDA: Comprehensive Journal of Islamic Social Studies</h5>
 										</div>
 										
-										<p>SINDA: Comprehensive Journal of Islamic Social Studies  adalah jurnal Fakultas Agama Islam Universitas Nahdlatul Ulama Blitar yang mewadahi penelitian akademisi untuk dipublikasikan dalam jurnal ilmiah, Terutama dalam bidang Jurnal  Ekonomi Syariah, Perbankan Syariah, Hukum Keluarga Islam, Psikologi Islam, PIAUD, Ilmu Al Quran Dan Tafsir, Komunikasi Penyiaran Islam dan ilmu pendidikan lain serta pengajarannya dengan membuat jurnal ilmiah terkait bidang keilmuan tersebut.  Jurnal SINDA Diterbitkan selama 3 kali setahun, yakni pada April, Agustus dan Desember oleh Lembaga Penelitian dan Pengabdian Masyarakat, Universitas Nahdlatul Ulama Blitar. </p></div>
+										<p>SINDA: Comprehensive Journal of Islamic Social Studies  adalah jurnal Fakultas Agama Islam Universitas Nahdlatul Ulama Blitar yang mewadahi penelitian akademisi untuk dipublikasikan dalam jurnal ilmiah, Terutama dalam bidang Jurnal  Ekonomi Syariah, Perbankan Syariah, Hukum Keluarga Islam, Psikologi Islam, PIAUD, Ilmu Al Quran Dan Tafsir, Komunikasi Penyiaran Islam dan ilmu pendidikan lain serta pengajarannya dengan membuat jurnal ilmiah terkait bidang keilmuan tersebut.  Jurnal SINDA Diterbitkan selama 3 kali setahun, yakni pada April, Agustus dan Desember oleh Lembaga Penelitian dan Pengabdian Masyarakat, Universitas Nahdlatul Ulama Blitar. </p>
+									</div>
 								</div>
 							</div>
 							
